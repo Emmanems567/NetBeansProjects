@@ -1,14 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author emmanems
- */
-public class Programador {
-    
+import java.util.ArrayList;
+
+public class Programador extends Empleado {
+  private ArrayList<String> lenguajes;
+
+  public Programador() {
+    super();
+    lenguajes = new ArrayList<>();
+  }
+
+  public Programador(String nombre, String numEmpleado, String categoria, String rfc) {
+    super(nombre, numEmpleado, categoria, rfc);
+    lenguajes = new ArrayList<>();
+  }
+
+  public void agregarLenguaje(String lenguaje) {
+    lenguajes.add(lenguaje);
+  }
+
+  @Override
+  public String crearRecibo(int dias, double costo) {
+    return "Programador Lenguajes: " + lenguajes + ", " + super.crearRecibo(dias, costo);
+  }
 }

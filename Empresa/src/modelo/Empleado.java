@@ -79,14 +79,14 @@ public class Empleado {
 
   @Override
   public String toString() {
-    return "Empleado (Nombre: )"
+    return "Empleado (Nombre: "
         + nombre
         + ", Numero de empleado: "
         + numEmpleado
         + ", Categoria: "
         + categoria
         + ", RFC= "
-        + rfc;
+        + rfc + ")";
   }
 
   public String crearRecibo(int dias, double costo) {
@@ -98,15 +98,15 @@ public class Empleado {
     double total = calcularTotal(percepcion, deducciones);
 
     return toString()
-        + "\n PERCEPCIONES DEDUCCIONES\nSalario: "
+        + "\n\n    PERCEPCIONES                   DEDUCCIONES\n\nSalario :     "
         + salario
-        + " ISR: "
+        + "         ISR:   "
         + isr
-        + "\nBono: 1200 IMSS: "
+        + "\nBono    :     1200            IMSS:   "
         + imss
-        + "\nTotal: "
-        + salario
-        + " Total: "
+        + "\nTotal   :     "
+        + percepcion
+        + "         Total:    "
         + deducciones
         + "\nSueldo a percibir: "
         + total;

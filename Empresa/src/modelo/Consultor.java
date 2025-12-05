@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author emmanems
- */
-public class Consultor {
-    
+public class Consultor extends Empleado{
+  private String nombreProyecto;
+
+  public Consultor() {
+    super();
+  }
+
+  public Consultor(String nombre, String numEmpleado, String categoria, String rfc, String nombreProyecto) {
+    super(nombre, numEmpleado, categoria, rfc);
+    this.nombreProyecto = nombreProyecto;
+  }
+
+  public String getNombreProyecto() {
+      return nombreProyecto;
+  }
+
+  public void setNombreProyecto(String nombreProyecto) {
+      this.nombreProyecto = nombreProyecto;
+  }
+
+  @Override
+  public String crearRecibo(int dias, double costo) {
+    return "Consultor Proyecto: " + nombreProyecto + ", " + super.crearRecibo(dias, costo);
+  }
 }
